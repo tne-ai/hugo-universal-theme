@@ -7,9 +7,11 @@ Universal is a clean and stylish website template built with [Bootstrap](https:/
 Demo site: [https://devcows.github.io/hugo-universal-theme](https://devcows.github.io/hugo-universal-theme/)
 
 Sponsor this project:
+
 - [https://paypal.me/ryanfox1985](https://paypal.me/ryanfox1985)
 - [https://www.patreon.com/ryanfox1985](https://www.patreon.com/ryanfox1985)
 - BTC wallet
+
 ```
 1My6zRZA4YKdX78aiZKZhWUWfFmCSDafZ6
 ```
@@ -17,7 +19,6 @@ Sponsor this project:
 This Hugo theme was ported from [Bootstrapious](http://bootstrapious.com/p/universal-business-e-commerce-template) for training and fun. It has a very nice and customizable landing page, a comments system by Disqus, site search by Google, contact forms by Formspree, Google Analytics, and optional widgets for the sidebar.
 
 ![screenshot](https://raw.githubusercontent.com/devcows/hugo-universal-theme/master/images/screenshot.png)
-
 
 ## Table of Contents
 
@@ -55,18 +56,17 @@ This Hugo theme was ported from [Bootstrapious](http://bootstrapious.com/p/unive
 
 ## Features
 
-* Responsive design
-* Customizable landing page
-  * Carousel
-  * Testimonials
-  * Features
-  * Customers
-  * Recent posts
-* Contact form by Formspree
-* Google search
-* Disqus comments
-* Google Analytics
-
+- Responsive design
+- Customizable landing page
+  - Carousel
+  - Testimonials
+  - Features
+  - Customers
+  - Recent posts
+- Contact form by Formspree
+- Google search
+- Disqus comments
+- Google Analytics
 
 ## Installation
 
@@ -80,13 +80,11 @@ $ git clone https://github.com/devcows/hugo-universal-theme
 
 For more information read the official [setup guide](https://gohugo.io/installation/) of Hugo.
 
-
 ## Configuration
 
 After installing the Universal theme successfully, we recommend you to take a look at the [exampleSite](//github.com/devcows/hugo-universal-theme/tree/master/exampleSite) directory. You will find a working Hugo site configured with the Universal theme that you can use as a starting point for your site.
 
 First, let's take a look at the [config.toml](//github.com/devcows/hugo-universal-theme/tree/master/exampleSite/config.toml). It will be useful to learn how to customize your site. Feel free to play around with the settings.
-
 
 ### Language
 
@@ -107,7 +105,6 @@ style = "default"
 Available options are: `default` (light-blue), `blue`, `green`, `marsala`, `pink`, `red`, `turquoise`, `violet`.
 There is the possibility to override the CSS and set your custom styles, override this file `static/css/custom.css` in your site.
 
-
 ### Comments
 
 The optional comments system is powered by [Disqus](https://disqus.com). If you want to enable comments, create an account in Disqus and write down your shortname.
@@ -119,7 +116,6 @@ Shortname = "devcows"
 ```
 
 You can disable the comments system by leaving the `Shortname` empty.
-
 
 ### Google Analytics
 
@@ -197,7 +193,7 @@ You can also define the menu items that will appear in the top bar. Edit the `[[
     weight = 4
 ```
 
-The `weight` parameter will determine the order of the menu entries. A top level menu item can contain a dropdown with 
+The `weight` parameter will determine the order of the menu entries. A top level menu item can contain a dropdown with
 an optional image, sections and multiple columns of menu items.
 
 To create a single list of menu items in the dropdown, first give your top level menu item unique identifier:
@@ -227,8 +223,9 @@ Now create additional menu items and use the above unique identifier as the valu
 ```
 
 It is also possible to display a dropdown menu with 4 columns. This theme supports 2 variations:
-* 4 columns of menu items with sections
-* 2 column wide image + 2 columns of menu items with sections
+
+- 4 columns of menu items with sections
+- 2 column wide image + 2 columns of menu items with sections
 
 To display 4 columns of menu items, start using sections. Sections are menu items treated special by this theme:
 
@@ -279,9 +276,9 @@ To display 4 columns of menu items, start using sections. Sections are menu item
 
 ```
 
-The above example shows a reduced version of the *All Pages* menu item from the example site. As you can see,
+The above example shows a reduced version of the _All Pages_ menu item from the example site. As you can see,
 we first create menu items with an identifier starting with `section.`. If you create entries like this, these
-will appear as section headers in your drop down. 
+will appear as section headers in your drop down.
 
 Each of these entries contain values for both the `weight` and `post` attribute. The `post` attribute is hijacked
 to indicate in which column a section will be put in. Within a column, the `weight` value is respected to show the
@@ -307,14 +304,13 @@ When using an image, don't configure section menu items in column 3 or 4. **Thes
 
 **Important:** Do not change the `identifier` key of existing menu entries!
 
-
 ### Sidebar widgets
 
 You can enable/disable the sidebar widgets that will be shown in the blog section. The following widgets are currently available:
 
-* Search bar (powered by Google)
-* Categories list
-* Tags list
+- Search bar (powered by Google)
+- Categories list
+- Tags list
 
 You can enable/disable them under `params.widgets`.
 
@@ -371,7 +367,6 @@ banner = "img/banners/banner-4.jpg"
 ```
 
 It must contain a relative path to the banner inside the `static` directory.
-
 
 ### Landing page
 
@@ -443,13 +438,13 @@ description: "Fifth abundantly made Give sixth hath. Cattle creature i be don't 
 
 The meaning of the individual YAML keys is as follows:
 
-| Key | Description |
-| --- | ----------- |
-| `weight` | A means to set the order of multiple features; features with a lower `weight` are displayed first (left to right, top to bottom) |
-| `name` | The title text below the feature icon; Markdown is supported |
-| `icon` | The CSS class of the feature icon; in this example we have used icons powered by [FontAwesome](https://fontawesome.com/icons) |
-| `url` | An optional URL the feature icon should point to; if specified, the icon will become a clickable hyperlink |
-| `description` | A short text below the title text to describe the feature; Markdown is supported |
+| Key           | Description                                                                                                                      |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `weight`      | A means to set the order of multiple features; features with a lower `weight` are displayed first (left to right, top to bottom) |
+| `name`        | The title text below the feature icon; Markdown is supported                                                                     |
+| `icon`        | The CSS class of the feature icon; in this example we have used icons powered by [FontAwesome](https://fontawesome.com/icons)    |
+| `url`         | An optional URL the feature icon should point to; if specified, the icon will become a clickable hyperlink                       |
+| `description` | A short text below the title text to describe the feature; Markdown is supported                                                 |
 
 Once you have completed your features, enable them in the `config.toml` file. Also the number of elements per row can be defined, by default is 3 (choose a divisor of 12 like 2, 3, 4 or 6).
 
@@ -491,7 +486,6 @@ Then, enable it in the configuration file and add a title and subtitle.
     subtitle = "We have worked with many clients and we always like to hear they come out from the cooperation happy and satisfied. Have a look what our clients said about us."
 ```
 
-
 #### See more
 
 This section is used to provide a link to another place. It can be an external site, or a page or post within your Hugo site.
@@ -507,7 +501,6 @@ You can enable it in the configuration file.
     link_url = "http://your-site.com/more"
     link_text = "Check other homepages"
 ```
-
 
 #### Clients
 
@@ -637,16 +630,25 @@ You can set default values for all pages in the `config.toml` file as below:
 The resulting HTML will be the following:
 
 ```html
-<meta name="keywords" content="devcows, hugo, go">
-<meta name="description" content="Site template made by Devcows using Hugo">
-<meta property="og:description" content="Site template made by Devcows using Hugo">
-<meta property="og:image" content="img/sharing-default.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="800">
-<meta property="og:image:height" content="420">
-<meta property="article:publisher" content="https://www.facebook.com/GolangSociety/">
-<meta name="twitter:description" content="Site template made by Devcows using Hugo">
-<meta name="twitter:site" content="@GoHugoIO">
+<meta name="keywords" content="devcows, hugo, go" />
+<meta name="description" content="Site template made by Devcows using Hugo" />
+<meta
+  property="og:description"
+  content="Site template made by Devcows using Hugo"
+/>
+<meta property="og:image" content="img/sharing-default.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="800" />
+<meta property="og:image:height" content="420" />
+<meta
+  property="article:publisher"
+  content="https://www.facebook.com/GolangSociety/"
+/>
+<meta
+  name="twitter:description"
+  content="Site template made by Devcows using Hugo"
+/>
+<meta name="twitter:site" content="@GoHugoIO" />
 ```
 
 You can also override the default values from the `config.toml` by setting the respective keys in the individual pages front matter. As an example, here's the front matter from the [`faq.md` file](exampleSite/content/faq.md) in the [`exampleSite` directory](exampleSite):
@@ -663,10 +665,10 @@ Which results in the following HTML:
 
 ```html
 <title>FAQ</title>
-<meta name="keywords" content="FAQ,How do I,questions,what if">
-<meta name="description" content="Frequently asked questions">
-<meta property="og:description" content="Frequently asked questions">
-<meta name="twitter:description" content="Frequently asked questions">
+<meta name="keywords" content="FAQ,How do I,questions,what if" />
+<meta name="description" content="Frequently asked questions" />
+<meta property="og:description" content="Frequently asked questions" />
+<meta name="twitter:description" content="Frequently asked questions" />
 ```
 
 If your site needs a custom Javascript library or CSS style you can override this file `layouts/partials/custom_headers.html` with the proper content like:
@@ -687,17 +689,38 @@ Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your b
 
 For more information check out the official [Hugo documentation](http://gohugo.io/overview/usage/).
 
-
 ## Contributing
 
 Did you find a bug or do you have an idea for a new feature? Feel free to use the [issue tracker](https://github.com/devcows/hugo-universal-theme/issues) to let us know. Or make a [pull request](https://github.com/devcows/hugo-universal-theme/pulls) directly.
-
 
 ## License
 
 This port is released under the MIT License. Check the [original theme license](http://bootstrapious.com/p/universal-business-e-commerce-template) for additional licensing information.
 
-
 ## Thanks
 
 Thanks to [Steve Francia](https://github.com/spf13) for creating Hugo and the awesome community around the project. And also thanks to [Bootstrapious](http://bootstrapious.com/) for creating this awesome theme.
+
+## Fork Notes (tne-ai/hugo-universal-theme)
+
+This fork at [tne-ai/hugo-universal-theme](https://github.com/tne-ai/hugo-universal-theme) tracks the upstream [devcows/hugo-universal-theme](https://github.com/devcows/hugo-universal-theme) and is currently the most actively maintained fork.
+
+### Hugo v0.156+ Compatibility Fix
+
+Hugo v0.156 deprecated `.Site.Data` in favour of `hugo.Data`, and Hugo v0.159 treats it as a build error. This fork fixes all affected partials:
+
+- `layouts/partials/carousel.html`
+- `layouts/partials/clients.html`
+- `layouts/partials/features.html`
+- `layouts/partials/testimonials.html`
+
+A PR for this fix has been submitted to upstream: [devcows/hugo-universal-theme#upstream-pr](https://github.com/devcows/hugo-universal-theme/pulls).
+
+### Using This Fork as a Hugo Module
+
+```yaml
+# config/_default/hugo.yaml
+module:
+  imports:
+    - path: github.com/tne-ai/hugo-universal-theme
+```
