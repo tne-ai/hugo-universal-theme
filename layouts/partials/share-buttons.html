@@ -1,0 +1,80 @@
+{{ $url := .Permalink }}
+{{ $title := .Title }}
+{{ $url_encoded := $url | urlquery }}
+{{ $title_encoded := $title | urlquery }}
+
+<style>
+.share-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+.share-buttons .share-label {
+  color: #999;
+  font-size: 14px;
+  font-weight: 500;
+}
+.share-buttons .share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  color: #666;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+.share-buttons .share-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-decoration: none;
+}
+.share-buttons .share-facebook:hover { background-color: #3B5998; color: #fff; }
+.share-buttons .share-twitter:hover { background-color: #000; color: #fff; }
+.share-buttons .share-linkedin:hover { background-color: #0077b5; color: #fff; }
+.share-buttons .share-whatsapp:hover { background-color: #25D366; color: #fff; }
+.share-buttons .share-instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; }
+.share-buttons .share-email:hover { background-color: #7D7D7D; color: #fff; }
+@media (max-width: 576px) {
+  .share-buttons { gap: 8px; }
+  .share-buttons .share-btn { width: 36px; height: 36px; font-size: 14px; }
+}
+</style>
+
+<div class="share-buttons">
+  <span class="share-label">Share:</span>
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ $url_encoded }}"
+     class="share-btn share-facebook" title="Share on Facebook"
+     target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://twitter.com/intent/tweet?url={{ $url_encoded }}&text={{ $title_encoded }}"
+     class="share-btn share-twitter" title="Share on X"
+     target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-x-twitter"></i>
+  </a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ $url_encoded }}"
+     class="share-btn share-linkedin" title="Share on LinkedIn"
+     target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  <a href="https://wa.me/?text={{ $title_encoded }}%20{{ $url_encoded }}"
+     class="share-btn share-whatsapp" title="Share on WhatsApp"
+     target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://www.instagram.com/"
+     class="share-btn share-instagram" title="Share on Instagram"
+     target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="mailto:?subject={{ $title_encoded }}&body={{ $title_encoded }}:%20{{ $url_encoded }}"
+     class="share-btn share-email" title="Share via Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+</div>

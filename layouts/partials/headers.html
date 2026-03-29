@@ -3,7 +3,7 @@
 <meta name="googlebot" content="index,follow,snippet,archive">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {{ $title_plain := .Title | markdownify | plainify }}
-<title>{{ $title_plain }}</title>
+<title>{{ $title_plain }}{{ if not .IsHome }} | {{ .Site.Title }}{{ end }}</title>
 <meta name="author" content="{{ .Param "author" }}" />
 
 <!-- Canonical URL for SEO -->
@@ -38,7 +38,7 @@
 {{ end }}
 
 <!-- Custom stylesheet - for your changes -->
-<link href="{{ "css/custom.css" | relURL }}?{{ now.Unix }}" rel="stylesheet">
+<link href="{{ "css/custom.css" | relURL }}" rel="stylesheet">
 
 <!-- Responsivity for older IE -->
 {{ `
@@ -102,3 +102,12 @@
 {{ end }}
 <meta name="twitter:description" content="{{ $description_plain | truncate 200 }}">
 {{ with .Param "twitter_author" }}<meta name="twitter:creator" content="@{{ . }}">{{ end }}
+
+<!-- JSON-LD Structured Data -->
+{{ if and (eq .Section "blog") .IsPage }}{{ partial "json-ld-blog.html" . }}{{ end }}
+{{ if .Params.faq }}{{ partial "json-ld-faq.html" . }}{{ end }}
+
+<!-- Tracking & Verification -->
+{{ partial "facebook-verification.html" . }}
+{{ partial "meta-pixel-head.html" . }}
+{{ partial "gtm-head.html" . }}

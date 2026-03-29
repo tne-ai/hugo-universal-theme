@@ -4,9 +4,14 @@
   <head>
     {{ partial "headers.html" . }}
     {{ partial "custom_headers.html" . }}
+    {{ if eq .File.BaseFileName "properties" }}
+    {{ partial "structured-data-lots.html" . }}
+    {{ end }}
   </head>
 
   <body>
+
+    {{ partial "gtm-body.html" . }}
 
     <div id="all">
         {{ partial "top.html" . }}
@@ -30,6 +35,7 @@
 
                         <div>
                           {{ .Content }}
+                          {{ partial "share-buttons.html" . }}
                         </div>
 
                     </div>
