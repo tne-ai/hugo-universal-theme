@@ -703,18 +703,40 @@ Thanks to [Steve Francia](https://github.com/spf13) for creating Hugo and the aw
 
 ## Fork Notes (tne-ai/hugo-universal-theme)
 
-This fork at [tne-ai/hugo-universal-theme](https://github.com/tne-ai/hugo-universal-theme) tracks the upstream [devcows/hugo-universal-theme](https://github.com/devcows/hugo-universal-theme) and is currently the most actively maintained fork.
+This fork at [tne-ai/hugo-universal-theme](https://github.com/tne-ai/hugo-universal-theme) is the most actively maintained fork of this theme. It incorporates fixes and improvements from two upstream sources:
+
+| Remote               | GitHub Repo                                                                         | Role                                                                                                                        |
+| -------------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `original-upstream`  | [devcows/hugo-universal-theme](https://github.com/devcows/hugo-universal-theme)     | Original theme — sync periodically via `git fetch original-upstream && git merge original-upstream/master`                  |
+| `lagobello-upstream` | [lagobello/hugo-universal-theme](https://github.com/lagobello/hugo-universal-theme) | Active fork with SEO/tracking improvements — sync via `git fetch lagobello-upstream && git merge lagobello-upstream/master` |
+
+To add these remotes locally:
+
+```bash
+git remote add original-upstream git@github.com:devcows/hugo-universal-theme.git
+git remote add lagobello-upstream git@github.com:lagobello/hugo-universal-theme.git
+```
 
 ### Hugo v0.156+ Compatibility Fix
 
-Hugo v0.156 deprecated `.Site.Data` in favour of `hugo.Data`, and Hugo v0.159 treats it as a build error. This fork fixes all affected partials:
+Hugo v0.156 deprecated `.Site.Data` in favour of `hugo.Data`, and Hugo v0.159 treats it as a fatal build error. This fork fixes all affected partials:
 
 - `layouts/partials/carousel.html`
 - `layouts/partials/clients.html`
 - `layouts/partials/features.html`
 - `layouts/partials/testimonials.html`
 
-A PR for this fix has been submitted to upstream: [devcows/hugo-universal-theme#upstream-pr](https://github.com/devcows/hugo-universal-theme/pulls).
+The same fix exists as [PR #460](https://github.com/devcows/hugo-universal-theme/pull/460) in the original upstream — not yet merged as of March 2026.
+
+### Improvements from lagobello-upstream
+
+- GTM, Meta Pixel, and Facebook verification (config-driven tracking)
+- JSON-LD structured data for blog posts and FAQ pages
+- CSS cache-busting fix
+- SEO: site title appended to page title tags
+- 404 page broken assets fix on deep URLs
+- Blog summary sanitization
+- Topbar vertical centering fix
 
 ### Using This Fork as a Hugo Module
 
